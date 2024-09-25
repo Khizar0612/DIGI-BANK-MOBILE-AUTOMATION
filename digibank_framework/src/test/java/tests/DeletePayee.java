@@ -15,10 +15,10 @@ public class DeletePayee extends BaseClass{
         Thread.sleep(1000);
 
         WebElement username = driver.findElement(By.xpath("//android.widget.EditText[@resource-id=\"text-input-outlined\" and @text=\"Enter your username\"]"));
-        username.sendKeys("AbdulHaseeb11");
+        username.sendKeys("jk399999");
 
         WebElement password = driver.findElement(By.xpath("//android.widget.EditText[@resource-id=\"text-input-outlined\" and @text=\"Enter your password\"]"));
-        password.sendKeys("1234@!a5678");
+        password.sendKeys("sassayyyyy");
 
         WebElement loginbtn = driver.findElement(By.xpath("(//android.widget.TextView[@text=\"Login\"])[2]"));
         loginbtn.click();
@@ -28,9 +28,9 @@ public class DeletePayee extends BaseClass{
         beneficiary.click();
         Thread.sleep(1000);
         
-        WebElement deletePayee = driver.findElement(By.xpath("//android.widget.TextView[@text=\"abcbank\"]"));
-        deletePayee.click();
-        Thread.sleep(1000);
+//        WebElement deletePayee = driver.findElement(By.xpath("//android.widget.TextView[@text=\"abcbank\"]"));
+//        deletePayee.click();
+//        Thread.sleep(1000);
         
         WebElement deleteIcon = driver.findElement(By.xpath("//android.view.ViewGroup[@content-desc=\"\"]"));
         deleteIcon.click();
