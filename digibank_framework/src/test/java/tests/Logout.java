@@ -18,6 +18,9 @@ public class Logout extends BaseClass{
 		WebElement password = driver.findElement(By.xpath("//android.widget.EditText[@resource-id=\"text-input-outlined\" and @text=\"Enter your password\"]"));
 		password.sendKeys("1234@!a5678");
 		
+		WebElement loginbtn = driver.findElement(By.xpath("(//android.widget.TextView[@text=\"Login\"])[2]"));
+        loginbtn.click();
+		
 		WebElement hamBurgerClick = driver.findElement(By.xpath("//android.widget.TextView[@text=\"\"]"));
 		hamBurgerClick.click();
 		
