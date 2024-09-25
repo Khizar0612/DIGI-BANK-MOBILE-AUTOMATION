@@ -3,7 +3,7 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="tests.AddBeneficieryTest">
+      <class name="tests.SearchPayee">
         <methods>
           <include name="setupReport"/>
           <include name="tearDown"/>
@@ -11,7 +11,7 @@
           <include name="setUp"/>
           <include name="test1"/>
         </methods>
-      </class> <!-- tests.AddBeneficieryTest -->
+      </class> <!-- tests.SearchPayee -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

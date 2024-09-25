@@ -3,6 +3,8 @@ import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URL;
 import org.openqa.selenium.remote.DesiredCapabilities;
+//import org.testng.annotations.AfterTest;
+//import org.testng.annotations.BeforeTest;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
@@ -18,12 +20,12 @@ public class BaseClass extends ExtentReportsDemo {
 		DesiredCapabilities cap = new DesiredCapabilities();
 		
 		cap.setCapability("platformName", "Android");
-		cap.setCapability("appium:deviceName", "Redmi 10C");
-		cap.setCapability("appium:automationName", "UiAutomator2");
+		cap.setCapability("appium:deviceName", "Tecno CK6N");
+		cap.setCapability("appium:automationName", "uiautomator2");
 		
 //		cap.setCapability("appium:newCommandTimeout", 60);
 		
-		cap.setCapability("appium:app", "C:\\Users\\ICA-4024\\Desktop\\APPIUM\\AppiumAPK\\application-34ad0f4f-9ad9-42c3-bd47-58c20c58c81a.apk");
+		cap.setCapability("appium:app", "C:\\Users\\ICONSULT\\Desktop\\EclipseProjects\\APK files\\application-bc917da9-f03a-4be3-8d01-2e521f43b4f0.apk");
 //		cap.setCapability("browserName", "Chrome");
 //		cap.setCapability("appium:chromedriverExecutable", "C:\\Users\\ICA-4024\\Desktop\\DB_APPIUM_FW\\digibank_framework\\drivers\\chromedriver-win64\\chromedriver.exe");
 		

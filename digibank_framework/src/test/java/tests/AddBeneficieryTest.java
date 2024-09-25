@@ -7,6 +7,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import io.appium.java_client.AppiumBy;
+//import io.appium.java_client.MobileElement;
+import io.appium.java_client.android.AndroidDriver;
+//import io.appium.java_client.MobileBy;
+
+
 public class AddBeneficieryTest extends BaseClass{
 
 	@Test
@@ -72,18 +78,51 @@ public class AddBeneficieryTest extends BaseClass{
 //        AssertJUnit.assertEquals(actualText, expectedText);
 //        Thread.sleep(1000);
         
-        WebElement scrollViewForBtn = driver.findElement(By.xpath("//android.widget.ScrollView/android.view.ViewGroup"));
-        
-        WebElement addBtn2 = driver.findElement(By.xpath("//android.widget.TextView[@text=\"Add\"]"));
+//        WebElement element =  driver.findElement(By.xpath("//android.widget.ScrollView/android.view.ViewGroup"));
+//        element.scrollTo("Add");
+//        WebElement scrollview= driver.findElement(By.xpath("//android.widget.ScrollView/android.view.ViewGroup"));
+//        scrollview.sc();
 
-        if (addBtn2.isDisplayed()) {
-            // Perform actions
-        	addBtn2.click();
-            String elementText = addBtn2.getText();
-            System.out.println("Text of the element: " + elementText);
-        } else {
-            System.out.println("Target element is not visible");
-        }
+     // Scroll until the element with text "ElementText" is visible
+//        MobileElement element2 = (MobileElement) driver.findElement(
+//        	    MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().text(\"Add"));
+//        	    
+        	
+
+        
+        
+     // Scroll to the "Add" button using UiScrollable
+        driver.findElement(new AppiumBy.ByAndroidUIAutomator(
+            "new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(" +
+            "new UiSelector().text(\"Add\"))"));
+
+        // After scrolling, find the "Add" button and click it
+        driver.findElement(By.xpath("//android.widget.TextView[@text='Add']")).click();
+
+        
+        
+        
+        
+        
+        
+        
+        
+     // Try to find the ScrollView first
+//        WebElement scrollView = driver.findElement(By.xpath("//android.widget.ScrollView/android.view.ViewGroup"));
+//        Thread.sleep(1000);
+//        // Then find the specific button inside the ScrollView
+//        WebElement addButton = scrollView.findElement(By.xpath("//android.widget.TextView[@text=\"Add\"]"));
+//        addButton.click();
+//        Thread.sleep(1000);
+
+//        if (addBtn2.isDisplayed()) {
+//            // Perform actions
+//        	addBtn2.click();
+//            String elementText = addBtn2.getText();
+//            System.out.println("Text of the element: " + elementText);
+//        } else {
+//            System.out.println("Target element is not visible");
+//        }
         		
 	}
 	

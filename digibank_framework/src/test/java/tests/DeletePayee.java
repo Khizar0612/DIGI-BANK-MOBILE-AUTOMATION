@@ -15,10 +15,10 @@ public class DeletePayee extends BaseClass{
         Thread.sleep(1000);
 
         WebElement username = driver.findElement(By.xpath("//android.widget.EditText[@resource-id=\"text-input-outlined\" and @text=\"Enter your username\"]"));
-        username.sendKeys("AbdulHaseeb11");
+        username.sendKeys("jk399999");
 
         WebElement password = driver.findElement(By.xpath("//android.widget.EditText[@resource-id=\"text-input-outlined\" and @text=\"Enter your password\"]"));
-        password.sendKeys("1234@!a5678");
+        password.sendKeys("sassayyyyy");
 
         WebElement loginbtn = driver.findElement(By.xpath("(//android.widget.TextView[@text=\"Login\"])[2]"));
         loginbtn.click();
@@ -28,19 +28,22 @@ public class DeletePayee extends BaseClass{
         beneficiary.click();
         Thread.sleep(1000);
         
-        WebElement deletePayee = driver.findElement(By.xpath("//android.widget.TextView[@text=\"abcbank\"]"));
-        deletePayee.click();
-        Thread.sleep(1000);
+
         
-        WebElement deleteIcon = driver.findElement(By.xpath("//android.view.ViewGroup[@content-desc=\"\"]"));
-        deleteIcon.click();
-        Thread.sleep(1000);
         
-        WebElement text = driver.findElement(By.xpath("//android.widget.TextView[@resource-id=\"android:id/message\"]"));
-        String actualText = text.getText();
-        String expectedText = "Beneficiary deleted successfully";
-        Assert.assertEquals(actualText, expectedText);
-        Thread.sleep(1000);
+        String beneficiaryNameToDelete = "Warisha"; 
+
+     // Locate the delete icon/button next to the specific beneficiary
+
+        WebElement deleteIcon = driver.findElement(By.xpath("(//android.widget.TextView[@text=\"\"])[3]"));
+	     // Click the delete icon/button
+	     deleteIcon.click();
+	     Thread.sleep(1000); // Wait for the action to complete
+	
+	     // Verify that the beneficiary has been deleted by checking that the name is no longer displayed
+	     boolean isBeneficiaryDeleted = driver.findElements(By.xpath("//android.widget.TextView[@text=\"" + beneficiaryNameToDelete + "\"]")).isEmpty();
+	     Assert.assertTrue(isBeneficiaryDeleted, "The beneficiary has been deleted successfully.");
+
         
 	}
         

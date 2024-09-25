@@ -2,45 +2,54 @@ package tests;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class SearchPayee extends BaseClass{
+import java.time.Duration;
+
+public class SearchPayee extends BaseClass {
 	
 	@Test
 	public void test1() throws InterruptedException {
+	    // Use WebDriverWait for more reliable element interactions
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		
-		WebElement login = driver.findElement(By.xpath("//android.widget.TextView[@text=\"Login\"]"));
+	    // Locate and click on the login button
+	    WebElement login = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[@text=\"Login\"]")));
         login.click();
-        Thread.sleep(1000);
+        
+        // Locate username field and input username
+        WebElement username = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.widget.EditText[@resource-id=\"text-input-outlined\" and @text=\"Enter your username\"]")));
+        username.sendKeys("jk399999");
 
-        WebElement username = driver.findElement(By.xpath("//android.widget.EditText[@resource-id=\"text-input-outlined\" and @text=\"Enter your username\"]"));
-        username.sendKeys("AbdulHaseeb11");
+        // Locate password field and input password
+        WebElement password = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.widget.EditText[@resource-id=\"text-input-outlined\" and @text=\"Enter your password\"]")));
+        password.sendKeys("sassayyyyy");
 
-        WebElement password = driver.findElement(By.xpath("//android.widget.EditText[@resource-id=\"text-input-outlined\" and @text=\"Enter your password\"]"));
-        password.sendKeys("1234@!a5678");
-
-        WebElement loginbtn = driver.findElement(By.xpath("(//android.widget.TextView[@text=\"Login\"])[2]"));
+        // Click on the login button
+        WebElement loginbtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//android.widget.TextView[@text=\"Login\"])[2]")));
         loginbtn.click();
-        Thread.sleep(1000);
         
-        WebElement beneficiary = driver.findElement(By.xpath("//android.widget.TextView[@text=\"Beneficiary\"]"));
+        // Locate and click on the Beneficiary option
+        WebElement beneficiary = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[@text=\"Beneficiary\"]")));
         beneficiary.click();
-        Thread.sleep(1000);
         
-        WebElement searchPayeeName = driver.findElement(By.xpath("//android.widget.EditText[@text=\"Search My Payees\"]"));
-        searchPayeeName.sendKeys("Atlas");
-        Thread.sleep(1000);
-        WebElement searchIcon = driver.findElement(By.xpath("//android.widget.TextView[@text=\"\"]"));
+        // Locate search field, input payee name "JV"
+        WebElement searchPayeeName = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.widget.EditText[@text=\"Search My Payees\"]")));
+        searchPayeeName.sendKeys("JV");
+
+        // Click on search icon
+        WebElement searchIcon = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[@text=\"\"]")));
         searchIcon.click();
-        Thread.sleep(1000);
         
-        WebElement text = driver.findElement(By.xpath("//android.widget.TextView[@resource-id=\"android:id/message\"]"));
+        // Verify that the search result contains the expected payee "JV"
+        WebElement text = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.widget.TextView[@text=\"JV\"]")));
         String actualText = text.getText();
-        String expectedText = "Atlas";
-        Assert.assertEquals(actualText, expectedText);
-        Thread.sleep(1000);
+        String expectedText = "JV";
+        Assert.assertEquals(actualText, expectedText, "Payee found successfully.");
+        
         
 	}
-	
 }

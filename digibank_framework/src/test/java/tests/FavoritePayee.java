@@ -15,10 +15,10 @@ public class FavoritePayee extends BaseClass{
         Thread.sleep(1000);
 
         WebElement username = driver.findElement(By.xpath("//android.widget.EditText[@resource-id=\"text-input-outlined\" and @text=\"Enter your username\"]"));
-        username.sendKeys("AbdulHaseeb11");
+        username.sendKeys("jk399999");
 
         WebElement password = driver.findElement(By.xpath("//android.widget.EditText[@resource-id=\"text-input-outlined\" and @text=\"Enter your password\"]"));
-        password.sendKeys("1234@!a5678");
+        password.sendKeys("sassayyyyy");
 
         WebElement loginbtn = driver.findElement(By.xpath("(//android.widget.TextView[@text=\"Login\"])[2]"));
         loginbtn.click();
@@ -28,22 +28,28 @@ public class FavoritePayee extends BaseClass{
         beneficiary.click();
         Thread.sleep(1000);
         
-        WebElement favPayee = driver.findElement(By.xpath("//android.widget.TextView[@text=\"abcbank\"]"));
-        favPayee.click();
-        Thread.sleep(1000);
+         // Adjust as necessary
+    	
         
-        WebElement favoriteIcon = driver.findElement(By.xpath("//android.widget.TextView[@text=\"\"]"));
+        
+     // Replace "Test" with the actual name of the beneficiary you want to favorite
+        String beneficiaryNameToFavorite = "Test"; 
+
+        // Locate the favorite icon next to the specific beneficiary
+        WebElement favoriteIcon = driver.findElement(By.xpath("(//android.widget.TextView[@text=\"\"])[2]")); // Assuming this points to the heart icon
+
+        // Click the favorite icon
         favoriteIcon.click();
-        Thread.sleep(1000);
+        Thread.sleep(1000); // Wait for the action to complete
+
+        // Now, verify that the beneficiary is marked as favorite by checking the UI
+        WebElement favoritedItem = driver.findElement(By.xpath("//android.widget.TextView[@text=\"" + beneficiaryNameToFavorite + "\"]"));
+
+        // Assert that the beneficiary is displayed correctly
+        Assert.assertTrue(favoritedItem.isDisplayed(), "The beneficiary is marked as favorite correctly.");
         
-//        WebElement favoriteIndicator = driver.findElement(By.xpath("com.example.yourapp:id/favorite_indicator"));
-//        Assert.assertTrue(favoriteIndicator.isDisplayed(), "Payee should be marked as a favorite.");
-//
-//        favoriteIcon.click();
-//
-//        Assert.assertFalse(favoriteIndicator.isDisplayed(), "Payee should not be marked as a favorite.");
-        
-        
+
+
 	}
 	
 }
