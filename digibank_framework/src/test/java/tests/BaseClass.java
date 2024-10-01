@@ -25,7 +25,7 @@ public class BaseClass extends ExtentReportsDemo {
 		
 //		cap.setCapability("appium:newCommandTimeout", 60);
 		
-		cap.setCapability("appium:app", "C:\\Users\\ICONSULT\\Desktop\\EclipseProjects\\APK files\\application-bc917da9-f03a-4be3-8d01-2e521f43b4f0.apk");
+		cap.setCapability("appium:app", "C:\\Users\\ICONSULT\\Desktop\\EclipseProjects\\APK files\\app-release.apk");
 //		cap.setCapability("browserName", "Chrome");
 //		cap.setCapability("appium:chromedriverExecutable", "C:\\Users\\ICA-4024\\Desktop\\DB_APPIUM_FW\\digibank_framework\\drivers\\chromedriver-win64\\chromedriver.exe");
 		

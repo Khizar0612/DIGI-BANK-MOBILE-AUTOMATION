@@ -3,23 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-<<<<<<< HEAD
-      <class name="tests.SearchPayee">
-=======
-      <class name="tests.FavoritePayee">
->>>>>>> 24110feab70cff400115049d8a5e3729d6788f99
+      <class name="tests.SignUpTest">
         <methods>
+          <include name="test1"/>
           <include name="setupReport"/>
           <include name="tearDown"/>
           <include name="tearDownReport"/>
           <include name="setUp"/>
-          <include name="test1"/>
         </methods>
-<<<<<<< HEAD
-      </class> <!-- tests.SearchPayee -->
-=======
-      </class> <!-- tests.FavoritePayee -->
->>>>>>> 24110feab70cff400115049d8a5e3729d6788f99
+      </class> <!-- tests.SignUpTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

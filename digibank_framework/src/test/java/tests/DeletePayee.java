@@ -28,13 +28,7 @@ public class DeletePayee extends BaseClass{
         beneficiary.click();
         Thread.sleep(1000);
         
-<<<<<<< HEAD
 
-=======
-//        WebElement deletePayee = driver.findElement(By.xpath("//android.widget.TextView[@text=\"abcbank\"]"));
-//        deletePayee.click();
-//        Thread.sleep(1000);
->>>>>>> 24110feab70cff400115049d8a5e3729d6788f99
         
         
         String beneficiaryNameToDelete = "Warisha"; 
